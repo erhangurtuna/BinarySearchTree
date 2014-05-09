@@ -1,12 +1,71 @@
-*.class
+//BinarySearchTree Code for Java
+//Test class is in the readme.part
 
-# Mobile Tools for Java (J2ME)
-.mtj.tmp/
+public class BinaryNode { public int data; public BinaryNode left; public BinaryNode right;
 
-# Package Files #
-*.jar
-*.war
-*.ear
+BinaryNode(int n){
+    this.data = n;
+}
 
-# virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
-hs_err_pid*
+public void insertLeft(BinaryNode n){
+    this.left = n;
+}
+
+public void insertRight(BinaryNode n){
+    this.right = n;
+}
+
+public String toString(){
+    return String.valueOf(this.data);
+}
+
+
+public BinaryNode findMin(BinaryNode t){
+        while(t.left!=null){
+            t=t.left;
+        }
+     return t;
+    }
+
+
+
+
+    public BinaryNode findMin(){
+
+    return findMin(this);
+}
+public BinaryNode findMax(BinaryNode t){
+        while(t.right!=null){
+            t=t.right;
+        }
+     return t;
+    }
+
+public BinaryNode findMax(){
+
+    return findMax(this);
+}
+public BinaryNode findSecondMin(BinaryNode t,BinaryNode n){
+        while(t.left!=null){
+            t=t.left;
+            n=n.left;
+        }
+     return n;
+    }
+
+public BinaryNode findSecondMin(){
+
+    return findSecondMin(this.left,this);
+}
+public BinaryNode findSecondMax(BinaryNode t,BinaryNode n){
+        while(t.right!=null){
+            t=t.right;
+            n=n.right;
+        }
+    return n;
+    }
+
+public BinaryNode findSecondMax(){
+
+    return findSecondMax(this.right,this);
+}
